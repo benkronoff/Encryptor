@@ -1,6 +1,6 @@
 import time
-
 import numpy
+
 from numpy.random.mtrand import randint
 
 
