@@ -17,27 +17,28 @@ from numpy.random.mtrand import randint
 
 # text encryption script by Ben Kronoff
 #                           benkronoff.com
-# how it works:
-# - chooses array code to use (two slight alternations)
-# - uses code to create randomly ordered number array with
-#   no repeats
-# - iterates through dictionary, replacing every key (letter / char),
-#   with an again randomly picked number, done by randomly selecting
-#   an index in the array, making sure the number isn't assigned to another
-#   char/used already, then assigning it to the approp. char in the dictionary.
-# - the users input is then itterated through, with each char being used
-#   to call its specified key in the dictionary. this key now has that
-#   absolutely randomly picked # value assigned to it, and thus that
-#   is what is ultimately used in the message.
-# - decode part soon; itterating back through key to assign appropriate letters.
-#   if you are looking for this now it is easily done - look up 'parsing string
-#   into a dictionary' i.e, then itterate through your message assigning each char
-#   to its original value in that dictionary. you may have to switch the keys/values
-#   rather than trying to reference in reverse, but i don't know enough about
-#   python to know which is possible/most effecient. (you can test keys and values
-#   with a for loop right?)
-#   if not then parse from string but backwards, keys > vals etc
-#
+
+``` How it works:  
+ - chooses which array creation algorithm to use (two slight alternations)  
+ - uses code to create randomly ordered number array with  
+   no repeats  
+ - iterates through dictionary, replacing every key (letter / char),  
+   with an again randomly picked number, done by randomly selecting  
+   an index in the array, making sure the number isn't assigned to another  
+   char/used already, then assigning it to the approx. char in the dictionary.  
+ - the users input is then iterated through, with each char being used  
+   to call its specified key in the dictionary. this key now has that  
+   absolutely randomly picked # value assigned to it, and thus that  
+   is what is ultimately used in the message.  
+ - decode part soon; iterating back through key to assign appropriate letters.  
+   if you are looking for this now it is easily done - look up 'parsing string  
+   into a dictionary' i.e, then iterate through your message assigning each char  
+   to its original value in that dictionary. you may have to switch the keys/values  
+   rather than trying to reference in reverse, but i don't know enough about  
+   python to know which is possible/most efficient. (you can test keys and values  
+   with a for loop right?)  
+   if not then parse from string but backwards, keys > vals etc ```
+    
 # comments are placed at various sections to explain what the program is doing.
 # if you appreciate my efforts, kindly view my website for more by me.
 #
