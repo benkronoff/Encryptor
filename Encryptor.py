@@ -17,8 +17,8 @@ from numpy.random.mtrand import randint
 
 # text encryption script by Ben Kronoff
 #                           benkronoff.com
-
-``` How it works:  
+"""
+How it works:
  - chooses which array creation algorithm to use (two slight alternations)  
  - uses code to create randomly ordered number array with  
    no repeats  
@@ -37,7 +37,8 @@ from numpy.random.mtrand import randint
    rather than trying to reference in reverse, but i don't know enough about  
    python to know which is possible/most efficient. (you can test keys and values  
    with a for loop right?)  
-   if not then parse from string but backwards, keys > vals etc ```
+   if not then parse from string but backwards, keys > vals etc
+   """
     
 # comments are placed at various sections to explain what the program is doing.
 # if you appreciate my efforts, kindly view my website for more by me.
@@ -82,6 +83,8 @@ def rando(n):
 
 
 done = []
+keylist_ = []
+vallist_ = []
 
 '''figure out which array code we should use using the most redundantly
 random way possible
@@ -225,9 +228,8 @@ def parse(a):
             if coded_str == str():
                 done.append(int(selection))
                 dictt[key] = int(selection)
-            else:
-                dictt[key] = int(selection)
-                done.append(int(selection))
+                keylist_.append(key)
+                vallist_.append(selection)
             print("        [] PASSED AS                  -[" + str(selection) + "]")
 
     return dictt
@@ -314,9 +316,13 @@ key = parse(1)
 msg = encrypt(user_in, key)
 
 # presentational
+
+total_ = keylist_ + vallist_
 print(str())
 print(msg)
 print("")
+print ("GIVE THIS LIST TO DECRYPT")
+print(total_)
 print("##################################################################")
 print("Job complete.")
 
