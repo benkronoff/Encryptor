@@ -194,7 +194,6 @@ def set_array(choice):
 
 
 
-
 # parse numbers to dictionary keys (the chars expected in the msg) #######################################
 def getSelection():
     selection = int(rando(3) / rando(1))
