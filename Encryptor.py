@@ -259,7 +259,7 @@ def parse(a):
 
         parsestr = str()
         for each in keylist_:
-            if parsetr = str():
+            if parsetr == str():
                 parsestr = str(each)
             else:
                 parsestr = parsestr + " " + str(each)
