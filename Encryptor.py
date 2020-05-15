@@ -1,6 +1,5 @@
 import time
 import numpy
-
 from numpy.random.mtrand import randint
 
 
@@ -227,10 +226,10 @@ def parse(a):
         # be supported by simply adding them as a key
         # here.
         dictt = {'a': 1, 'b': 2,'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14,
-                  'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25,'z': 26, '-': 27,
-                 ',': 28, ' ': 29, '.': 30, '?': 31, '!': 32, '|': 33, '@': 34, '#': 35, '$': 36, '%': 37, '^': 38, '&': 38, '*': 40,
-                 '(': 41, ')': 42, '_': 43, '=': 44, '+': 45, '[': 47, ']': 48, '{': 49, ']': 50, '"': 51, "'": 52, '<': 53, '>': 54,
-                 '/': 55, '~': 56,}
+                  'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26, '-': 27,
+                 ',': 28, ' ': 29, '.': 30, '?': 31, '!': 32, '|': 33, '@': 34, '#': 35, '$': 36, '%': 37, '^': 38, '&': 39, '*': 40,
+                 '(': 41, ')': 42, '_': 43, '=': 44, '+': 45, '[': 46, ']': 47, '{': 48, '}': 49, '"': 50, "'": 51, '<': 52, '>': 53,
+                 '/': 54, '~': 55, '1': 56, '2': 57, '3': 58, '4': 59, '5': 60, '6': 61, '7': 62, '8': 63, '9': 64, '0': 65}
 
         key_valuess = []
         key_values = [0]
@@ -252,23 +251,17 @@ def parse(a):
             selint = [int(selection)]
             key_values.append(selection)
 
-
-
             print("        [] PASSED AS                  -[" + str(selection) + "]")
-            print("Vallist: " + str(vallist_))
-            current = print(str(selection))
-
 
         # document for key
         keylist_ = key_values
 
         parsestr = str()
         for each in keylist_:
-            parsestr = parsestr + " " + str(each)
-        print(key_values)
-        print()
-        print (keylist_)
-        print(parsestr)
+            if parsetr = str():
+                parsestr = str(each)
+            else:
+                parsestr = parsestr + " " + str(each)
 
     return dictt, parsestr
 
