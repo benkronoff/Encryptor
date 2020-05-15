@@ -363,5 +363,4 @@ print(str())
 msg("longMsg")
 
 # done!
-# this section is pretty simple eh? love python.
 #########################################################################################################
