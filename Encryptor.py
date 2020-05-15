@@ -35,14 +35,6 @@ How it works:
    to call its specified key in the dictionary. this key now has that  
    absolutely randomly picked # value assigned to it, and thus that  
    is what is ultimately used in the message.  
- - decode part soon; iterating back through key to assign appropriate letters.  
-   if you are looking for this now it is easily done - look up 'parsing string  
-   into a dictionary' i.e, then iterate through your message assigning each char  
-   to its original value in that dictionary. you may have to switch the keys/values  
-   rather than trying to reference in reverse, but i don't know enough about  
-   python to know which is possible/most efficient. (you can test keys and values  
-   with a for loop right?)  
-   if not then parse from string but backwards, keys > vals etc
 """
     
 # comments are placed at various sections to explain what the program is doing.
