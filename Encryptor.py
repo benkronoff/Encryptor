@@ -194,6 +194,7 @@ def set_array(choice):
 
 
 
+
 # parse numbers to dictionary keys (the chars expected in the msg) #######################################
 def getSelection():
     selection = int(rando(3) / rando(1))
@@ -258,7 +259,7 @@ def parse(a):
 
         parsestr = str()
         for each in keylist_:
-            if parsetr == str():
+            if parsestr == str():
                 parsestr = str(each)
             else:
                 parsestr = parsestr + " " + str(each)
@@ -324,7 +325,6 @@ choice = find_array()
 print("   [] Done! 10k tries // random: " + str(choice))
 print("   [] Acting accordingly...")
 
-time.sleep(3)
 # create array using previously chosen command
 a = set_array(choice)
 
@@ -332,8 +332,7 @@ print("[] ARRAY SET #####")
 print(str())
 
 # get the message to encrypt
-user_in = str(input("MESSAGE FOR ENCRYPTION | "))
-
+user_in = str(input('MESSAGE FOR ENCRYPTION: '))
 print(str())
 
 # parse the array ontop of the dictionary values randomly
