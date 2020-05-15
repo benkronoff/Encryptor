@@ -162,8 +162,8 @@ def set_array(choice):
 
     # random code choice 2 ###########
     if choice == int(2):
-        print("[] USING KEY #2")
-        print("    [] This may take a few seconds... (3 x (100 - 999k calculations!))")
+        print("   [] USING KEY #2")
+        print("   [] This may take a few seconds... (3 x (100 - 999k calculations!))")
         for x in range(int(10000 + rando(5) + rando(3))):
             val = rando(2)
 
