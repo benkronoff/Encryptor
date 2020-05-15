@@ -87,7 +87,8 @@ def msg(x):
         print("##################################################################")
         print("##################################################################")
     if x == "shortMsg":
-        print
+        print("#######################################################################################")
+
 
 done = []
 
@@ -176,9 +177,9 @@ def set_array(choice):
     a = a[num1:num2]
     print(str())
     print(str())
-    print("#######################################################################################")
+    msg("shortMsg")
     print ("ARRAY_[" + str(a) + "]")
-    print("#######################################################################################")
+    msg("shortMsg")
     print(str())
     return a
 
@@ -259,14 +260,14 @@ def parse(a):
 
 
         # document for key
-        total_ = key_values
+        keylist_ = key_values
 
         parsestr = str()
-        for each in total_:
+        for each in keylist_:
             parsestr = parsestr + " " + str(each)
         print(key_values)
         print()
-        print (total_)
+        print (keylist_)
         print(parsestr)
 
     return dictt, parsestr
@@ -309,7 +310,7 @@ def encrypt(in_str, key):
     print("########### .... OUTPUT []")
     print("## STRING.MSG: ##      '" + str(coded_str) + "'")
     print("## ARRAY.MSG: ##      '" + str(coded_array) + "'")
-    print("##################################################################")
+    msg("shortMsg")
     print(str())
     msg("shortMsg")
     return str(coded_str)
@@ -349,7 +350,7 @@ print(str())
 #       suppose it could be used for increased randomness still.
 grab = parse(1)
 key = grab[0]
-total_ = grab[1]
+keylist_ = grab[1]
 
 # using these randomly assigned numbers to chars, substitute in
 
@@ -364,7 +365,7 @@ print("# MSG.LIST: ")
 print(msg_)
 print(str())
 print ("# KEY.LIST: ")
-print(total_)
+print(keylist_)
 print(str())
 msg("longMsg")
 
