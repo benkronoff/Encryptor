@@ -81,7 +81,7 @@ def decrypt(x, y):
         passchar = keylist[index]
 
         # create a new dictionary so we can just call each value in the message and assign
-        # it to its value in the dictionary, pretty much opposite of decryption
+        # it to its value in the dictionary, pretty much opposite of encryption
         key_dict[passchar] = str(key)
 
     # now we have the new dictionary set
