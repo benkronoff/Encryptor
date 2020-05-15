@@ -31,18 +31,7 @@ def msg(x):
         print("#######################################")
         print("#######################################")
         print("#######################################")
-    if x == "gap":
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
+
 
 
 def decrypt(x, y):
@@ -115,19 +104,28 @@ msg_Str = msgs[0]
 msg_Array = msgs[1]
 
 msg("longMsg")
-msg("gap")
+
+print("##########################################################")
+
+for x in range(100):
+    print(str())
 
 print("    ...  message decoded")
 print()
+
 msg("longMsg")
+
 print()
 print("OUTPUT: ")
+
 print("#########")
 print(msg_Str)
 print("#########")
 print()
 print()
 print()
+
 print(msg_Array)
+
 print()
 msg("longMsg")
