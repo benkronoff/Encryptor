@@ -81,10 +81,16 @@ def rando(n):
     range_end = int((10**n)-1)
     return randint(range_start, range_end)
 
+def msg(x):
+    if x == "longMsg":
+        print("##################################################################")
+        print("##################################################################")
+        print("##################################################################")
+    if x == "shortMsg":
+        print
 
 done = []
-keylist_ = []
-vallist_ = []
+
 
 '''figure out which array code we should use using the most redundantly
 random way possible
@@ -189,8 +195,15 @@ in_range - passed from argument
 
 # parse numbers to dictionary keys (the chars expected in the msg) #######################################
 
-def parse(a):
 
+def getSelection():
+    selection = int(rando(3) / rando(1))
+    while selection in done:
+        print("        [] PASSED AS                  -[" + str(selection) + "] - error_already_used")
+        selection = int(rando(3) / rando(1)) - int(rando(1) + rando(1))
+    return selection
+
+def parse(a):
     in_range = a
     if in_range == str():
         in_range = int(1)
@@ -212,27 +225,51 @@ def parse(a):
         # this method is effecient as new characters can
         # be supported by simply adding them as a key
         # here.
-        dictt = {'a': 1, 'c': 3, 'b': 2, 'e': 5, 'd': 4, 'g': 7, 'f': 6, 'i': 9, 'h': 8, 'k': 11, 'j': 10, 'm': 13,
-                 'l': 12, 'o': 15, 'n': 14, 'q': 17, 'p': 16, 's': 19, 'r': 18, 'u': 21, 't': 20, 'w': 23, 'v': 22,
-                 'y': 25, 'x': 24, 'z': 26, '-': 27, ',': 28, ' ': 29, '.': 30, '?': 31, '!': 32, '|': 33}
+        dictt = {'a': 1, 'b': 2,'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14,
+                  'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25,'z': 26, '-': 27,
+                 ',': 28, ' ': 29, '.': 30, '?': 31, '!': 32, '|': 33, '@': 34, '#': 35, '$': 36, '%': 37, '^': 38, '&': 38, '*': 40,
+                 '(': 41, ')': 42, '_': 43, '=': 44, '+': 45, '[': 47, ']': 48, '{': 49, ']': 50, '"': 51, "'": 52, '<': 53, '>': 54,
+                 '/': 55, '~': 56,}
 
+        key_valuess = []
+        key_values = [0]
         for key in dictt:
+            vallist_ = [0]
             elem_count =+ 1
             print("        [] PASSING CHAR:              [" + str(key) + "]")
-            selection = int(rando(3) / rando(1))
 
-            while selection in done:
-                print("        [] PASSED AS                  -[" + str(selection) + "] - error_already_used")
-                selection = int(rando(3) / rando(1)) - int(rando(1) + rando(1))
+            # get our value from the array
+            selection = getSelection()
 
-            if coded_str == str():
-                done.append(int(selection))
-                dictt[key] = int(selection)
-                keylist_.append(key)
-                vallist_.append(selection)
+            # remember weve used it
+            done.append(int(selection))
+
+            # save it to our key (a, b, c)
+            dictt[key] = int(selection)
+
+            # document for key display
+            selint = [int(selection)]
+            key_values.append(selection)
+
+
+
             print("        [] PASSED AS                  -[" + str(selection) + "]")
+            print("Vallist: " + str(vallist_))
+            current = print(str(selection))
 
-    return dictt
+
+        # document for key
+        total_ = key_values
+
+        parsestr = str()
+        for each in total_:
+            parsestr = parsestr + " " + str(each)
+        print(key_values)
+        print()
+        print (total_)
+        print(parsestr)
+
+    return dictt, parsestr
 
 
 
@@ -256,22 +293,25 @@ def encrypt(in_str, key):
             coded_str = coded_str + "-" + str(parse)
             coded_array.append(int(parse))
 
+
+
     # user messages
     elem_count = len(in_str)
-    print(" [] ALL [" + str(elem_count) + "] CHARS SUCCESSFULLY PARSED.")
+    for x in range(100):
+        print(str())
+    print("         ......")
+    print("     [] ALL [" + str(elem_count) + "] CHARS SUCCESSFULLY PARSED.")
+    print(str())
+    print(str())
+    print(str())
+    msg("longMsg")
     print(str())
     print("########### .... OUTPUT []")
     print("## STRING.MSG: ##      '" + str(coded_str) + "'")
     print("## ARRAY.MSG: ##      '" + str(coded_array) + "'")
     print("##################################################################")
     print(str())
-    print("# KEY.MSG: " + str(key) + "###")
-    print("###########")
-    print(str())
-    print("20 SECONDS []")
-    print("###############################")
-    time.sleep(20)
-
+    msg("shortMsg")
     return str(coded_str)
 
 
@@ -307,24 +347,26 @@ print(str())
 #       was a more useful feature in orig design, however i
 
 #       suppose it could be used for increased randomness still.
-key = parse(1)
-
+grab = parse(1)
+key = grab[0]
+total_ = grab[1]
 
 # using these randomly assigned numbers to chars, substitute in
 
 # users msg as appropriate.
-msg = encrypt(user_in, key)
+msg_ = encrypt(user_in, key)
 
 # presentational
 
-total_ = keylist_ + vallist_
+
 print(str())
-print(msg)
-print("")
-print ("GIVE THIS LIST TO DECRYPT")
+print("# MSG.LIST: ")
+print(msg_)
+print(str())
+print ("# KEY.LIST: ")
 print(total_)
-print("##################################################################")
-print("Job complete.")
+print(str())
+msg("longMsg")
 
 # done!
 # this section is pretty simple eh? love python.
