@@ -307,12 +307,12 @@ def encrypt(in_str, key):
     print(str())
     msg("longMsg")
     print(str())
-    print("########### .... OUTPUT []")
+    print("############ .... OUTPUT []")
     print("## STRING.MSG: ##      '" + str(coded_str) + "'")
     print("## ARRAY.MSG: ##      '" + str(coded_array) + "'")
-    msg("shortMsg")
+    print("###########################")
     print(str())
-    msg("shortMsg")
+    msg("longMsg")
     return str(coded_str)
 
 
