@@ -153,7 +153,7 @@ def set_array(choice):
             val = rando(2)
 
             # we already used this value!
-            while int(val) in used_val:
+            if int(val) in used_val:
                 val = int(rando(2))
 
             else:
@@ -168,7 +168,7 @@ def set_array(choice):
             val = rando(2)
 
             # we already used this value!
-            while int(val) in used_val:
+            if int(val) in used_val:
                 val = int(rando(2))
 
             else:
