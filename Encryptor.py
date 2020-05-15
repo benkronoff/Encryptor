@@ -13,9 +13,15 @@ from numpy.random.mtrand import randint
 #####################
 ####         [] ABOUT
 #####################
-
+#
 # text encryption script by Ben Kronoff
 #                           benkronoff.com
+#
+# DECRYPT.PY CAN BE FOUND IN THIS GITHUB REPO
+# github.com/benkronoff/Encryptor
+# use the msg and key . list output by this program
+# to reassign the values opposite of how this program does.
+#
 """
 How it works:
  - chooses which array creation algorithm to use (two slight alternations)  
@@ -37,7 +43,7 @@ How it works:
    python to know which is possible/most efficient. (you can test keys and values  
    with a for loop right?)  
    if not then parse from string but backwards, keys > vals etc
-   """
+"""
     
 # comments are placed at various sections to explain what the program is doing.
 # if you appreciate my efforts, kindly view my website for more by me.
@@ -136,7 +142,7 @@ def set_array(choice):
     # probably not the best way of doing this but this will works.
     # define used dict:
     choice = int(choice)
-    used_val = ['']
+    used_val = []
     a = []
 
     # random code choice 1 ###########
@@ -147,8 +153,9 @@ def set_array(choice):
             val = rando(2)
 
             # we already used this value!
-            if int(val) in used_val:
+            while int(val) in used_val:
                 val = int(rando(2))
+
             else:
                 used_val.append(int(val))
                 a.append(int(val))
@@ -161,8 +168,9 @@ def set_array(choice):
             val = rando(2)
 
             # we already used this value!
-            if int(val) in used_val:
+            while int(val) in used_val:
                 val = int(rando(2))
+
             else:
                 used_val.append(int(val))
                 a.append(int(val))
@@ -183,25 +191,18 @@ def set_array(choice):
     return a
 
 
-'''
-in_range - passed from argument
- defining how many encryptions of the same msg we want it to return.
- can be useful for distributing the message to others without compromising a single key.
- '''
-
 
 
 
 
 # parse numbers to dictionary keys (the chars expected in the msg) #######################################
-
-
 def getSelection():
     selection = int(rando(3) / rando(1))
     while selection in done:
         print("        [] PASSED AS                  -[" + str(selection) + "] - error_already_used")
         selection = int(rando(3) / rando(1)) - int(rando(1) + rando(1))
     return selection
+
 
 def parse(a):
     in_range = a
@@ -262,7 +263,7 @@ def parse(a):
                 parsestr = str(each)
             else:
                 parsestr = parsestr + " " + str(each)
-
+    print("##########################################################")
     return dictt, parsestr
 
 
@@ -286,6 +287,8 @@ def encrypt(in_str, key):
         else:
             coded_str = coded_str + "-" + str(parse)
             coded_array.append(int(parse))
+    print("##########################################################")
+
 
 
 
@@ -335,11 +338,8 @@ user_in = str(input("MESSAGE FOR ENCRYPTION | "))
 print(str())
 
 # parse the array ontop of the dictionary values randomly
-
 #       param can be used to assign them multiple times. it
-
 #       was a more useful feature in orig design, however i
-
 #       suppose it could be used for increased randomness still.
 grab = parse(1)
 key = grab[0]
